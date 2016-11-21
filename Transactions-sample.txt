@@ -1,0 +1,8 @@
+Account number	FI1234567890123456
+
+Entry date	Value date	Payment date	Amount	Beneficiary/Remitter	Account number	BIC	Transaction	Reference number	Originator's reference	Message	Card number	Receipt	
+
+01.12.2015	01.12.2015	01.12.2015	-9,99	BAR "TONIK"			Visa Electron purch.	123450001234		RUB         100,00 SANKT-PETERBU KURSSI: 50,1234 	1231231231231231		
+
+02.12.2015	02.12.2015	02.12.2015	-11,11	"AERO-TREYD SANKT-PETERBU			Visa Electron purch.	123450001234		EUR          11,11 SANKT-PETERBU 	1231231231231231		
+

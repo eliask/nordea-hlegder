@@ -2,7 +2,7 @@ Tilinumero	FI1234567890123456
 
 Kirjauspäivä	Arvopäivä	Maksupäivä	Määrä	Saaja/Maksaja	Tilinumero	BIC	Tapahtuma	Viite	Maksajan viite	Viesti	Kortinnumero	Kuitti	
 
-15.01.2015	15.01.2015	15.01.2015	1700,12	Business Job			Pano			Salary
+15.01.2015	15.01.2015	15.01.2015	1700,12	Business Job			Pano			Salary			
 
 18.01.2015	18.01.2015	18.01.2015	-12,21	Food Shop			Korttiosto	987654321098		HELSINKI 	1231231231231231		
 

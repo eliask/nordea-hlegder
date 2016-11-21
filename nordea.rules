@@ -1,44 +1,46 @@
 # Kirjauspäivä,Arvopäivä,Maksupäivä,Määrä,Saaja/Maksaja,Tilinumero,BIC,Tapahtuma,Viite,Maksajan viite,Viesti,Kortinnumero,Kuitti,
-fields date,_,_,amount,description
+skip 1
+fields entry_date, value_date, payment_date, amount, beneficiary_or_remitter, account_number, bic, transaction, reference_number, originators_reference, message, card_number, receipt
 currency €
 date-format %d.%m.%Y
-account1 assets:bank:checking
+date %entry_date
+description %beneficiary_or_remitter
+comment %transaction - %message, date: %payment_date
+code %reference_number%originators_reference
+account1 assets:bank:nordea:checking
 
 if palkka
     account2 income:salary
 
-if alepa
-    account2 expenses:groceries
-if k supermarket
-    account2 expenses:groceries
-if k citymarket
-    account2 expenses:groceries
-if s market
-    account2 expenses:groceries
-if lidl
-    account2 expenses:groceries
-if siwa
-    account2 expenses:groceries
-if k extra
-    account2 expenses:groceries
-if suomen lähikauppa
+if
+alepa
+k[- ](market|supermarket|citymarket|extra)
+lidl
+s[- ]market
+siwa
+suomen lähikauppa
+tesco
+farmfoods
+sainsbury
     account2 expenses:groceries
 
-if ravintola
+if
+ravintola
+pizza
+lounas
+restaurant
     account2 expenses:food
-if pizza
-    account2 expenses:food
-if lounas
-    account2 expenses:food
+
 if alko
     account2 expenses:food:booze
 
-if verkkokauppa.com
+
+if
+verkkokauppa.com
+clas ohlson
+anttila
     account2 expenses:gear
-if clas ohlson
-    account2 expenses:gear
-if anttila
-    account2 expenses:gear
+
 if ikea
     account2 expenses:furniture
 
@@ -48,16 +50,57 @@ if apteekki
     account2 expenses:medical
 if nordea
     account2 expenses:banking
-if energia
+
+if
+energia
+finkraft oy
     account2 expenses:utils:power
+
 if vakuutus
     account2 expenses:fees:insurance
 
-if taksi
-    account2 expenses:taxi
+
+if
+airbnb
+hostel
+hotel
+    account2 expenses:travel:accommodation
+
+
+if
+finnair
+icelandair ehf
+klm airline
+norwegian ai
+wow air
+    account2 expenses:travel:plane
+
+if
+taksi
+taxi
+uber
+    account2 expenses:travel:taxi
+
+if onnibus
+    account2 expenses:travel:bus
+
+
+if 
+teliasonera finland
+    account2 expenses:phone
+
+if
+sats finland
+elixia
+    account2 expenses:gym
+
 
 if veronkanto
     account2 expenses:tax
 if ennakonpalautus
     account2 income:tax-refund
 
+if
+automaattiotto
+nostopalkkio
+    account2 expenses:atm
